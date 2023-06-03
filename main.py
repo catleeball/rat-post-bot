@@ -10,7 +10,7 @@ from secrets import COHOST_USERNAME, COHOST_PW
 
 BASE_URL = 'https://archive.org/download/bippobeppo/'
 COHOST_PAGE = 'rats'
-TAGS = ['bippo and/or beppo the rat', 'ratposting', 'rat', 'rats', 'bot account', 'automated post', 'cohost.py']
+TAGS = ['bippo and/or beppo the rat', 'ratposting', 'rat', 'rats', 'automated post', 'The Cohost Bot feed']
 FILENAMES = sorted(FILENAMES)
 MAX = len(FILENAMES)
 CURRENT_INDEX_FILE = 'index.txt'
@@ -44,7 +44,7 @@ def post_to_cohost(file: str):
     user = User.login(COHOST_USERNAME, COHOST_PW)
     project = user.getProject(COHOST_PAGE)
     new_post = project.post(
-        headline="It's Bippo and/or Beppo!",
+        headline="It's a little guy!",
         blocks=[MarkdownBlock(url)],
         tags=TAGS,
     )
